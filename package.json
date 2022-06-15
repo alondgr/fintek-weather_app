@@ -1,0 +1,26 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000f\u0000i\u0000n\u0000t\u0000e\u0000k\u0000-\u0000w\u0000e\u0000a\u0000t\u0000h\u0000e\u0000r\u0000_\u0000a\u0000p\u0000p\u0000\r\u0000 \u0000#\u0000 \u0000w\u0000e\u0000a\u0000t\u0000h\u0000e\u0000r\u0000-\u0000a\u0000p\u0000p\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix api-weather",
+    "install-client": "npm install --prefix ui-weather",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run watch --prefix api-weather",
+    "client": "npm start --prefix ui-weather",
+    "watch": "npm run server & npm run client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alondgr/fintek-weather_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alondgr/fintek-weather_app/issues"
+  },
+  "homepage": "https://github.com/alondgr/fintek-weather_app#readme"
+}
