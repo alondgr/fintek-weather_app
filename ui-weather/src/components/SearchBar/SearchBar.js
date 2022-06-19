@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Route, Switch } from 'react-router';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { fetchWeather } from '../../config/service';
 import './SearchBar.css';
+
 const initialHours = [{ hour: '', temp_c: '' }]
 const initialWeather = {
     name: '',
@@ -15,15 +15,19 @@ const initialWeather = {
     accurateTo: ''
 }
 
+/* 
+    constants in another file constants.js
+    break apart to sub components
+    use context
+*/
 
 export default function SearchBar() {
-
     const [city, setCity] = useState('tel aviv');
     const [error, setError] = useState(null);
-
     const [weather, setWeather] = useState(initialWeather);
     const [hours, setHours] = useState(initialHours);
     const cityRef = useRef();
+
     useEffect(() => {
         if (!city.trim().length) {
             setWeather(initialWeather);

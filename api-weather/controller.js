@@ -3,6 +3,13 @@ const axios = require('axios');
 const date = require('date-and-time');
 const { json } = require('express/lib/response');
 
+/* 
+    - async await instead of promise
+    - url from env
+    - destructor where ever you can
+    - getHours function (nowHour, forcast[])
+*/
+
 async function search(req, res) {
     const location = req.params.location;
     const weatherUrl = `http://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${location}&aqi=no&alerts=no&days=2`
@@ -29,8 +36,6 @@ async function search(req, res) {
 
 
             const nowHour = now.getHours();
-            if (nowHour + 4 > 23) {
-            }
             const hours = Array(5).fill().map((e, i) => {
                 let element;
                 console.log(nowHour, i)
